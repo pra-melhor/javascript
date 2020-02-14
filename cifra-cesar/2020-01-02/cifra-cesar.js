@@ -1,7 +1,6 @@
 let cesarcifra = {
     cifrar: function(palavra){
-        let alfabeto = 'abcdefghijklmnopqrstuvwxyz'
-        alfabeto += alfabeto;
+        let alfabeto = cesarcifra.getAlfabeto()
 
         let retorno = ""
         for (let posicao = 0; posicao < palavra.length; posicao++) {
@@ -13,20 +12,16 @@ let cesarcifra = {
 
             const posicaoAtual = alfabeto.indexOf(letra)            
             const posicaoCifrada = posicaoAtual + 3
-            // if (!alfabeto[posicaoCifrada]) {
-            //     console.log('letra',letra)
-            //     if (letra == 'y') {
-            //         retorno += 'b'
-            //     }
-            //     retorno += 'a'
-            //     break
-            // }
    
             retorno += alfabeto[posicaoCifrada]
 
             if (ehMaiuscula) retorno = retorno.toUpperCase()
         }
         return retorno
+    },
+    getAlfabeto: function() {
+        return 'abcdefghijklmnopqrstuvwxyz' +
+            'abcdefghijklmnopqrstuvwxyz';
     }
 }
 
