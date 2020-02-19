@@ -14,13 +14,13 @@ let cesarcifra = {
         return 'abcdefghijklmnopqrstuvwxyz' +
             'abcdefghijklmnopqrstuvwxyz';
     },
-    letraDoAlfabetoCifrada(letra, alfabeto) {
+    letraDoAlfabetoCifrada(letra, alfabeto, DESLOCAMENTO = 3) {
         let retorno = ""
         const ehMaiuscula = alfabeto.indexOf(letra) < 0
         if (ehMaiuscula) letra = letra.toLowerCase()
 
         const posicaoAtual = alfabeto.indexOf(letra)
-        const posicaoCifrada = posicaoAtual + 3
+        const posicaoCifrada = posicaoAtual + DESLOCAMENTO
 
         retorno = alfabeto[posicaoCifrada]
         if (ehMaiuscula) retorno = retorno.toUpperCase()
